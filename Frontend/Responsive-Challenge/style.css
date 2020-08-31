@@ -5,26 +5,178 @@
 
 body {
 	margin: 0;
-	font-family: sans-serif;
+	font-family: Roboto,sans-serif;
+	padding:0;
 }
 
 .container {
-	margin-left: 20px;
 	background: #23424a;
 	color: white;
-	width: 1000px;
+	padding:8rem 0rem 8rem 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	
+}
+
+.header-container{
+margin-top:0px;
+font-size:3em;
+width: 85%;
+}
+
+.header-para{
+	width:48%;
+	margin-top:20px;
+	margin-bottom:30px;
+	display:block;
+	line-height:25px;
+	font-size:1.1rem;
+}
+.btn{
+	text-decoration:none;
+	color:#23424a;
+	background-color:#00e6e6;
+	padding:10px;
+	font-weight:700;
+	border-radius:20px;
+	width:150px;
+	text-align:center;
+	position:relative;
+	top:20px;
+	display:block;
+}
+
+.mid-section{
+	display:flex;
+	justify-content: space-around;
+	padding:10px 200px 10px 200px;
+}
+
+.mid-section-card{
+	width:280px;
+	margin:auto 10px auto 0px;
+	padding: 35px 0px;
+	text-align:center;
+}
+
+.card-head{
+	font-size:2rem;
+	color:#23424a
 }
 
 footer {
 	background-color: #136c72;
 	text-align: center;
-	max-width: 50%;
+	max-width: 100%;
+	display:flex;
+	justify-content:center;
+	color:white;
+	padding:40px 250px;
+}
+
+.end-card-1{
+	margin-right:15px;
+}
+
+.end-card-2{
+	margin-left:15px;
+}
+
+.end-card-head{
+	font-size:2rem;
 }
 
 .credentials {
-	float: left;
+	text-align:center;
+	padding:40px;
+	padding-bottom:20px;
+	color:#23424a;
+	font-size:1.1rem;
 }
 
 @media (max-width: 850px){
+
+	.container {
+		background: #23424a;
+		color: white;
+		padding:8rem 8rem 8rem 8rem;
+		width: 100%;
+		text-align:center;
+		
+	}
+	
+	.header-container{
+	margin-top:0px;
+	font-size:3em;
+	width: 100%;
+	}
+	
+	.header-para{
+		width:100%;
+		margin-top:20px;
+		margin-bottom:30px;
+		display:block;
+		line-height:25px;
+		font-size:1.1rem;
+	}
+	.btn{
+		text-decoration:none;
+		color:#23424a;
+		background-color:#00e6e6;
+		margin:0 auto;
+		padding:10px;
+		font-weight:700;
+		border-radius:20px;
+		width:150px;
+		text-align:center;
+		position:relative;
+		top:20px;
+		display:block;
+	}
+	
+	.mid-section{
+		display:flex;
+		flex-direction: column;
+		justify-content: center;	
+	}
+	
+	.mid-section-card{
+		width:100%;
+		padding: 15px 0px;
+		text-align:center;
+	}
+	
+	.card-head{
+		font-size:2rem;
+		color:#23424a
+	}
+	
+	footer {
+		background-color: #136c72;
+		text-align: center;
+		width: 100%;
+		display:flex;
+		flex-direction: column;
+		justify-content:center;
+		color:white;
+	}
+	
+	
+	.end-card-head{
+		font-size:2rem;
+	}
+	.end-card-1{
+		margin-left:20px;
+	}
+	
+	.credentials {
+		text-align:center;
+		padding:40px;
+		padding-bottom:20px;
+		color:#23424a;
+		font-size:1.1rem;
+	}
+
 
 }
