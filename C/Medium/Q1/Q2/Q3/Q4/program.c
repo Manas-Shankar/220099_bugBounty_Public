@@ -58,27 +58,33 @@ int power(int x, unsigned int y)
 void ullaruNum(int q)
 {
     long long finalSum = 0;
-    for (int n = 1; n <= q; n++)
+    for (long n = 1; n <= q; n++)
     {
-
         long long sqr_n = n * n;
 
-        long long ctr_digits = 1;
+        long long ctr_digits = 0;
 
-        while (sqr_n) // counting the no. of digits
+        while (sqr_n != 0) // counting the no. of digits
         {
-            ctr_digits + ;
             sqr_n /= 10;
+            ctr_digits++;
         }
+        
         sqr_n = n * n;
 
         long long r_digits = (ctr_digits + 1) / 2;
 
-        long long eq_parts = power(10; r_digits);
+        long long eq_parts = power(10, r_digits);
+
+        if((sqr_n / eq_parts) == 0 || (sqr_n % eq_parts) == 0)
+            continue;
 
         long long sum = sqr_n / eq_parts + sqr_n % eq_parts;
+
         if (sum == n)
-            finalSum = sum;
+        {
+            finalSum += sum;
+        }
     }
 
     hash(finalSum);
