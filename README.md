@@ -17,4 +17,6 @@ Project 1 frontend----- bugs fixed :
 
 the webpage should be functioning as per the expectations now.
 
+Project 2 frontend----- responsive :
 
+made the website look as expected and behave responsively
