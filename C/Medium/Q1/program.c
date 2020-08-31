@@ -35,7 +35,7 @@ void Sort(char arr[], int n)
     {
         for (j = 0; j < n - i - 1; j++)
         {
-            if (arr[i] > arr[i + 1])
+            if (arr[j] > arr[j + 1])
             {
                 swap(&arr[j], &arr[j + 1]);
                 p++; //Just a counter, ignore this  ///// DO NOT CHANGE THIS LINE /////
@@ -63,14 +63,14 @@ int removeDups(char arr[], int n)
     return j;
 }
 
-void countDups(char orig[], int count[], int n, int newLength)
+void countDups(int orig[], int count[], int n, int newLength)
 {
     int i = 0, j = 0;
 
     for (i = 0; i < newLength; i++)
     {
-        count[i] = 0;
-        p += count[i] //Just a counter, ignore this  ///// DO NOT CHANGE THIS LINE /////
+        count[i] = 1;
+        p += count[i]; //Just a counter, ignore this  ///// DO NOT CHANGE THIS LINE /////
     }
 
     for (i = 0; i < n - 1; i++)
