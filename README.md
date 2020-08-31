@@ -20,3 +20,10 @@ the webpage should be functioning as per the expectations now.
 Project 2 frontend----- responsive :
 
 made the website look as expected and behave responsively
+
+
+project 3 todolist----- :
+
+1.fixed position of input field.
+2.fixed order of appearance of plus, minus and input fields.Now plus sign appears first.
+3.fixed stretching of container element by adding height:fit-content.
