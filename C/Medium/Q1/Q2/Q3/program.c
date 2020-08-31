@@ -39,15 +39,16 @@ struct contact
 
 void sort(struct contact *contactList)
 {
-    for (int i = 0; i < 1000; i++)
+    struct contact t;
+    for (int i = 0; i < 1000 - 1; i++)
     {
-        for (int j = 0; j < 999; j++)
+        for (int j = 0; j < 1000 - i -1; j++)
         {
-            if (contactList[i].phone > contactList[i + 1].phone)
+            if (contactList[j].phone > contactList[j + 1].phone)
             {
-                t = contactList[i];
-                contactList[i] = contactList[i + 1];
-                contactList[i + 1] = t;
+                t = contactList[j];
+                contactList[j] = contactList[j + 1];
+                contactList[j + 1] = t;
             }
         }
     }
@@ -59,7 +60,7 @@ void main()
     int bufferLength = 255;
     char buffer[255];
     FILE *file;
-    char *pch;
+    char* pch;
 
     struct contact contactList[1000];
 
@@ -69,27 +70,29 @@ void main()
 
     while (fgets(buffer, bufferLength, file))
     {
-        pch = strtok(buffer, " \n");
+        pch = strtok(buffer, " ");
 
         int temp = 0;
-        while (pch !== NULL)
+        while (pch != NULL)
         {
             temp++;
             if (temp == 1)
             {
-                strcopy(contactList[i].name, pch);
+                strcpy(contactList[i].name, pch);
             }
             else
             {
                 contactList[i].phone = atoll(pch);
             }
 
-            pch = strtok(NULL, " \n");
+            pch = strtok(NULL, "\n");
         }
+        i++;
     }
     fclose(file);
 
     sort(contactList);
+
 
     ////// CODE ABOVE HAS BUGS
 
