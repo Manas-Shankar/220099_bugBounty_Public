@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let renderBtn = document.querySelector("#generate-pokemon");
   renderBtn.addEventListener("click", generatePokemons);
   delButton().addEventListener("click", deleteEverything);
+  const element = document.getElementsByClassName("card").addEventListener("mousehover",()=>{
+    document.getElementsByClassName("tooltip").style.display = "visible";
+  })
 });
 
 function generatePokemons() {
@@ -17,25 +20,27 @@ function delButton() {
 }
 
 async function fetchKantoPokemon() {
-  let url = "https://pokeapi.co/api/v2/pokemon?limit=1";
+  let url = "https://pokeapi.co/api/v2/pokemon?limit=18";
   for (let i = 0; i < 18; i++) {
     let response = await fetch(url);
     let data = await response.json();
     const newPokemon = new Pokemon({
-      name: data.results[0].name,
-      apiURL: data.results[0].url,
+      name: data.results[i].name,
+      apiURL: data.results[i].url,
     });
     const pokeData = await fetchPokemonData(newPokemon);
-    newPokemon.imageURL = `https://pokeres.bastionbot.org/images/pokemon/${pokeData.id}.png`;
+    newPokemon.newimageURL = `https://pokeres.bastionbot.org/images/pokemon/${pokeData.id}.png`;
+
     newPokemon.stats = pokeData.stats;
     renderPokemon(newPokemon);
   }
 }
 
 async function fetchPokemonData(pokemon) {
-  let url = pokemon.api;
+  let url = pokemon.apiURL;
   let response = await fetch(url);
   let pokedata = await response.json();
+  console.log(pokedata);
   return pokedata;
 }
 
@@ -43,13 +48,10 @@ function renderPokemon(pokemon) {
   let pokemonDiv = document.getElementById("pokemon");
   let pokeDiv = document.createElement("div");
   pokeDiv.classList.add("card");
-
-  pokemonImage(pokemon.imageURL, pokeDiv);
+  pokemonImage(pokemon.newimageURL, pokeDiv);
   pokemonToolTip(pokemon.stats, pokeDiv);
-
   let pokeName = document.createElement("h4");
   pokeName.innerText = pokemon.name;
-
   pokeDiv.append(pokeName);
   pokemonDiv.appendChild(pokeDiv);
 }
@@ -74,8 +76,8 @@ function pokemonToolTip(stats, pokeDiv) {
     toolTipContainer.appendChild(row);
   });
   toolTipContainer.classList.add("card");
+  toolTipContainer.style.display="visible";
   toolTipContainer.classList.add("tooltip");
-
   pokeDiv.appendChild(toolTipContainer);
 }
 

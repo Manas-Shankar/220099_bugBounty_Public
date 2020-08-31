@@ -27,3 +27,12 @@ project 3 todolist----- :
 1.fixed position of input field.
 2.fixed order of appearance of plus, minus and input fields.Now plus sign appears first.
 3.fixed stretching of container element by adding height:fit-content.
+
+
+project 4 pokemon api ----- :
+
+1. fixed the 404 error on images
+2. fixed the limit and made it to 18 to get 18 pokemons
+3. almost added event listeners on card areas to show tooltip 
+
+
